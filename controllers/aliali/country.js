@@ -8,16 +8,16 @@ const choiceCountry = async () => {
     await driver.findElement(By.className('login-form-item-right')).click()
     await driver.sleep(500)
 
-    const bodyCountryBlock = await driver.findElement(By.className('uni-searchbar__box')) 
-    await bodyCountryBlock.click()
+    const BODY_COUNTRY_BLOCK = await driver.findElement(By.className('uni-searchbar__box')) 
+    await BODY_COUNTRY_BLOCK.click()
 
-    const searchInput = await driver.wait(until.elementLocated(By.xpath("//input[@type='search']")),30000,null,500)
+    const SEARCH_INPUT = await driver.wait(until.elementLocated(By.xpath("//input[@type='search']")),30000,null,500)
     
-    await searchInput.click()
-    await searchInput.sendKeys('Russia')
+    await SEARCH_INPUT.click()
+    await SEARCH_INPUT.sendKeys('Russia')
     await driver.sleep(500)
 
-    await searchInput.sendKeys(Key.RETURN)
+    await SEARCH_INPUT.sendKeys(Key.RETURN)
     await driver.sleep(500)
     
     await driver.findElement(By.className('popup-content-list-item')).click()

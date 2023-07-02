@@ -1,9 +1,9 @@
 const e = require('../../core/events/events')
-const auth = require('../../controllers/touziapi/auth')
-const country = require('../../controllers/touziapi/country')
-const gifts = require('../../controllers/touziapi/gifts')
-const reward = require('../../controllers/touziapi/reward')
-const login = require('../../controllers/touziapi/login')
+const auth = require('../../controllers/aliali/auth')
+const country = require('../../controllers/aliali/country')
+const gifts = require('../../controllers/aliali/gifts')
+const reward = require('../../controllers/aliali/reward')
+const login = require('../../controllers/aliali/login')
 
 async function main() {
   

@@ -8,25 +8,26 @@ const reward = async (report) => {
 
   try{
 
-    const rewardPage = await driver.wait(until.elementLocated(By.xpath('//*[@id="app"]/uni-app/uni-page')),60000,null,100)
+    const REWARD_PAGE = await driver.wait(until.elementLocated(By.xpath('//*[@id="app"]/uni-app/uni-page')),60000,null,100)
     
-    if(rewardPage)
+    if(REWARD_PAGE)
     await driver.sleep(2000)
-    await rewardPage.findElement(By.id('categoryItemnav2')).click()
+    await REWARD_PAGE.findElement(By.id('categoryItemnav2')).click()
     await driver.sleep(1500)
 
     try{
-      const notReceiveButton = await driver.findElement(By.className('success'))
-      if(notReceiveButton) {
+      const NOT_RECEIVE = await driver.findElement(By.className('success'))
+      
+      if(NOT_RECEIVE) {
         report(false)
       }
 
     }catch(err) {
-      const receiveButton = await driver.wait(until.elementLocated(By.className(`receive`)),60000,null,100)
+      const RECEIVE_BUTTON = await driver.wait(until.elementLocated(By.className(`receive`)),60000,null,100)
       
-      if(receiveButton) {
+      if(RECEIVE_BUTTON) {
         await driver.sleep(500)
-        await receiveButton.click()
+        await RECEIVE_BUTTON.click()
         await driver.sleep(1500)
         await report(true)
       }
