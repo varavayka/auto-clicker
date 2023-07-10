@@ -5,7 +5,7 @@ const gifts = require('../../controllers/aliali/gifts')
 const reward = require('../../controllers/aliali/reward')
 const login = require('../../controllers/aliali/login')
 
-async function main() {
+ function main() {
   
   e.once('auth', async (phoneNumber,password) => {
     await auth(phoneNumber,password)
